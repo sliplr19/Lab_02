@@ -50,8 +50,21 @@ are clusted under 1. The only outlier is Trinidad and Tobago.
 ### Exercise 2
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density(alpha = 0.2) +
+  scale_fill_viridis_d()
 ```
+
+    ## Warning: Removed 51 rows containing non-finite values (stat_density).
+
+![](lab-02_files/figure-gfm/plastic-waste-density-1.png)<!-- -->
+
+The color and fill of the curves were mapped to aesthetics because they
+are variable dependent. The alpha level applies to all data (not by
+variable), so it is defined in the plotting geom.
 
 ### Exercise 3
 
