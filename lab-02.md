@@ -1,21 +1,13 @@
 Lab 02 - Plastic waste
 ================
-Insert your name here
-Insert date here
+Lindley Slipetz
+02/3/2021
 
 ## Load packages and data
 
 ``` r
 library(tidyverse) 
 ```
-
-    ## Warning: package 'ggplot2' was built under R version 3.6.3
-
-    ## Warning: package 'tidyr' was built under R version 3.6.2
-
-    ## Warning: package 'dplyr' was built under R version 3.6.3
-
-    ## Warning: package 'stringr' was built under R version 3.6.3
 
 ``` r
 plastic_waste <- read_csv("data/plastic-waste.csv")
@@ -25,11 +17,35 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+``` r
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_histogram(binwidth = 0.2)
+```
+
+![](lab-02_files/figure-gfm/plastic-per-cap-1.png)<!-- -->
 
 ``` r
-# insert code here
+plastic_waste %>%
+  filter(plastic_waste_per_cap > 3.5)
 ```
+
+    ## # A tibble: 1 x 10
+    ##   code  entity continent  year gdp_per_cap plastic_waste_p~ mismanaged_plas~
+    ##   <chr> <chr>  <chr>     <dbl>       <dbl>            <dbl>            <dbl>
+    ## 1 TTO   Trini~ North Am~  2010      31261.              3.6             0.19
+    ## # ... with 3 more variables: mismanaged_plastic_waste <dbl>, coastal_pop <dbl>,
+    ## #   total_pop <dbl>
+
+``` r
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_histogram(binwidth = 0.2) +
+  facet_wrap(~continent)
+```
+
+![](lab-02_files/figure-gfm/continent-1.png)<!-- -->
+
+Generally, there are similar trends across continents: most countries
+are clusted under 1. The only outlier is Trinidad and Tobago.
 
 ### Exercise 2
 

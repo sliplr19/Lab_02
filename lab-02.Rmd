@@ -7,7 +7,7 @@ output: github_document
 
 ## Load packages and data
 
-```{r load-packages, message=FALSE}
+```{r load-packages, message=FALSE, warning = FALSE}
 library(tidyverse) 
 ```
 
@@ -19,11 +19,24 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
 
-```{r plastic-waste-continent}
-# insert code here
+```{r plastic-per-cap, warning = FALSE}
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_histogram(binwidth = 0.2)
 ```
+
+```{r filter_cap}
+plastic_waste %>%
+  filter(plastic_waste_per_cap > 3.5)
+```
+
+```{r continent, warning = FALSE}
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_histogram(binwidth = 0.2) +
+  facet_wrap(~continent)
+```
+
+Generally, there are similar trends across continents: most countries are clusted under 1. The only outlier is Trinidad and Tobago.
 
 ### Exercise 2
 
