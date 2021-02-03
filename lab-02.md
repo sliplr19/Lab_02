@@ -9,6 +9,14 @@ Insert date here
 library(tidyverse) 
 ```
 
+    ## Warning: package 'ggplot2' was built under R version 3.6.3
+
+    ## Warning: package 'tidyr' was built under R version 3.6.2
+
+    ## Warning: package 'dplyr' was built under R version 3.6.3
+
+    ## Warning: package 'stringr' was built under R version 3.6.3
+
 ``` r
 plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
