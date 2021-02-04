@@ -55,7 +55,22 @@ The color and fill of the curves were mapped to aesthetics because they are vari
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+```{r box-plot, warning = FALSE}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_boxplot()
+```
+
+```{r violin, warning = FALSE}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
+```
+
+
+The violin plots reveal the shape of the distributions, while the box plots do not. The outliers for continents other than North America are more apparent in the box plots than the violin plots.
 
 ### Exercise 4
 

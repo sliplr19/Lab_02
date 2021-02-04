@@ -68,7 +68,27 @@ variable), so it is defined in the plotting geom.
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_boxplot()
+```
+
+![](lab-02_files/figure-gfm/box-plot-1.png)<!-- -->
+
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
+```
+
+![](lab-02_files/figure-gfm/violin-1.png)<!-- -->
+
+The violin plots reveal the shape of the distributions, while the box
+plots do not. The outliers for continents other than North America are
+more apparent in the box plots than the violin plots.
 
 ### Exercise 4
 
