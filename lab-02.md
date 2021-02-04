@@ -92,19 +92,48 @@ more apparent in the box plots than the violin plots.
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
-
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x =       
+                 mismanaged_plastic_waste_per_cap,
+                     y = plastic_waste_per_cap)) +
+  geom_point() +
+  labs(title = "Mismanaged plastic waste per capita vs plastic waste per capita",
+       x = "Mismanaged plastic waste per capita",
+       y = "Plastic waste per capita")
 ```
+
+![](lab-02_files/figure-gfm/scatter-1.png)<!-- -->
+
+Most of the countries are grouped towards the origin of the graph. There
+seems to be a slight positive linear relationship.
 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
+color the points in the scatterplot by continent. Does there seem to be
+any clear distinctions between continents with respect to how plastic
+waste per capita and mismanaged plastic waste per capita are associated?
 
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x =       
+                 mismanaged_plastic_waste_per_cap,
+                     y = plastic_waste_per_cap,
+                 color = continent)) +
+  geom_point() +
+  labs(title = "Mismanaged plastic waste per capita vs plastic waste per capita",
+       x = "Mismanaged plastic waste per capita",
+       y = "Plastic waste per capita")
 ```
+
+![](lab-02_files/figure-gfm/scatter-cont-1.png)<!-- -->
+
+North America seems to have points with higher plastic waste per capita;
+though, for most, they are low in mismanaged plastic waste per capita
+(like the other continents). Africa seems to do the best job of
+mismanaged plastic waste per capita as the maximum of the its values on
+the x axis is lower than the other continents. Asia has the worst
+mismanaged plastic waste per capita.
 
 ### Exercise 6
 
