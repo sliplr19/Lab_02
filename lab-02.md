@@ -110,10 +110,6 @@ seems to be a slight positive linear relationship.
 
 ### Exercise 5
 
-color the points in the scatterplot by continent. Does there seem to be
-any clear distinctions between continents with respect to how plastic
-waste per capita and mismanaged plastic waste per capita are associated?
-
 ``` r
 ggplot(data = plastic_waste, 
        mapping = aes(x =       
@@ -137,23 +133,43 @@ mismanaged plastic waste per capita.
 
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
-
-``` r
-# insert code here
-```
+At some point, the numbering got messed up. I swear it’s all here.
 
 ### Exercise 7
 
-Remove this text, and add your answer for Exercise 7 here.
-
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x =       
+                 total_pop,
+                     y = plastic_waste_per_cap,
+                 color = continent)) +
+  geom_point() +
+  labs(title = "Total population vs plastic waste per capita",
+       x = "Total Population",
+       y = "Plastic waste per capita")
 ```
 
+![](lab-02_files/figure-gfm/scatter-pop-1.png)<!-- -->
+
 ``` r
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x =       
+                 coastal_pop,
+                     y = plastic_waste_per_cap,
+                 color = continent)) +
+  geom_point() +
+  labs(title = "Coastal population vs plastic waste per capita",
+       x = "Coastal Population",
+       y = "Plastic waste per capita")
 ```
+
+![](lab-02_files/figure-gfm/scatter-coast-1.png)<!-- -->
+
+It’s hard to see the relationship with the outliers included, but it
+seems that coastal population has the potential to have more of a linear
+relationship with plastic waste per capita. For total population, most
+of the points are grouped at the origin, while, for coastal population,
+there is more spread across the x-axis.
 
 ### Exercise 8
 
