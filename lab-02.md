@@ -173,8 +173,24 @@ there is more spread across the x-axis.
 
 ### Exercise 8
 
-Remove this text, and add your answer for Exercise 8 here.
-
 ``` r
-# insert code here
+ggplot(plastic_waste %>% filter( plastic_waste_per_cap < 3), 
+       mapping = aes(x = coastal_pop/total_pop,
+                     y = plastic_waste_per_cap,
+                 color = continent)) +
+   geom_point() +
+  geom_smooth(aes(group = 1), color="black") +
+  labs(title = "Plastic waste vs. coastal population proportion",
+       x = "Coastal population proportion (Coastal/total population)",
+       y = "Plastic waste per capita") +
+  scale_color_viridis_d()
 ```
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+![](lab-02_files/figure-gfm/recreate-1.png)<!-- -->
+
+On the left side of the graph, as coastal population increases, plastic
+waste per capita increases. Then, around .75, the graph levels off. It
+seems, if there were coastal population proportions greater than 1.75,
+plastic waste per capita would decrease.
